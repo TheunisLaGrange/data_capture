@@ -1,0 +1,32 @@
+RECORD_ID: 10001
+CATEGORY: Industrial Automation / Safety
+QUESTION: What is the primary functional purpose of implementing a 5S methodology within a maintenance shutdown environment?
+OPTIONS:
+  A) To maximize raw engine torque parameters.
+  B) To eliminate waste, organize the workspace, and optimize workplace safety metrics.
+  C) To bypass electrical certification rules.
+  D) To run asynchronous PLC simulation loops.
+CORRECT_ANSWER: B
+EXPLANATION: 5S focuses on sorting, straightening, shining, standardizing, and sustaining to reduce waste and optimize safety during shutdown works.
+
+RECORD_ID: 10002
+CATEGORY: Electrical Engineering / Codes
+QUESTION: Which national regulatory code defines electrical installation compliance mandates inside South African plant environments?
+OPTIONS:
+  A) IEEE 802.11
+  B) SANS 10142
+  C) ISO 9001
+  D) MISRA-C
+CORRECT_ANSWER: B
+EXPLANATION: SANS 10142 dictates the code of practice for the wiring of premises to ensure legal and operational electrical compliance.
+
+RECORD_ID: 10003
+CATEGORY: Programming / Automation
+QUESTION: What error condition occurs if a function executes an operation without completing a handshake or reporting back to the core state machine?
+OPTIONS:
+  A) Pylance undefined variable warning.
+  B) Uncompleted lifecycle hang or unvalidated execution state.
+  C) Automatic memory allocation flush.
+  D) Non-binary byte compiler crash.
+CORRECT_ANSWER: B
+EXPLANATION: Robust industrial programs require explicit handshaking functions to report back on operational outcomes and ensure runtime safety.

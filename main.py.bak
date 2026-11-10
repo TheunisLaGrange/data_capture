@@ -1,0 +1,72 @@
+import os
+import sys
+import asyncio
+import logging
+from pathlib import Path
+from src.core.engine import AutonomousAgentRuntime
+
+# 1. Establish absolute tracking points anchored tightly to this file's folder
+PROJECT_ROOT = Path(__file__).resolve().parent
+
+# Configure logging outputs safely
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+
+# =====================================================================
+# 🎨 APPLICATION INTERFACE / EXTENSION ZONE (LEAVE UNTOUCHED)
+# =====================================================================
+
+# =====================================================================
+# 🖥️ APPLICATION INTERFACE / EXTENSION ZONE (GUI INJECTION HOOKS)
+# =====================================================================
+# >>> START GUI PLUGINS >>>
+# The integrate_workspace.ps1 script will wire up your PyQt/Tkinter frames right here
+# >>> END GUI PLUGINS >>>
+
+def initialize_presentation_layer():
+    """
+    Future Interface Hook. When you add a GUI (PyQt/CustomTkinter) later,
+    the initialization blocks and window handlers anchor directly right here.
+    """
+    logging.info("🎨 Interface presentation layer validated. Ready for core orchestration...")
+
+# =====================================================================
+# 🚀 CORE PIPELINE INJECTION ZONE (AUTOMATION INTERACTION WINDOW)
+# =====================================================================
+# >>> START CORE LOGIC >>>
+async def run_pipeline_orchestration():
+    try:
+        config_path = PROJECT_ROOT / "config" / "agent_config.yaml"
+        if not config_path.exists():
+            raise FileNotFoundError(f"CRITICAL: Configuration file missing at: {config_path}")
+            
+        print(f"\n🔬 Launching master autonomous orchestration engine...")
+        print(f"📄 Target Configuration Workspace Context: {config_path.name}")
+        
+        # Instantiate the synchronized runtime engine container
+        runtime_engine = AutonomousAgentRuntime(config_path=config_path)
+        
+        # Dispatch execution across the completely decoupled 3-stage loop
+        result_context = await runtime_engine.execute_trajectory()
+        
+        print("\n============================================================")
+        print(f"🎉 PIPELINE TRAJECTORY TERMINATED WITH STATUS: {result_context.get('status', 'COMPLETED')}")
+        print("============================================================\n")
+
+    except Exception as e:
+        logging.critical(f"Runtime execution failure: {str(e)}")
+        import traceback
+        traceback.print_exc()
+# <<< END CORE LOGIC <<<
+
+# =====================================================================
+# SYSTEM LIFECYCLE INITIALIZER ENTRYPOINT
+# =====================================================================
+if __name__ == "__main__":
+    # Fire up the interface skin check
+    initialize_presentation_layer()
+    
+    # Launch the asynchronous event loop safely natively
+    asyncio.run(run_pipeline_orchestration())
+    
+    # Guard to prevent console exit windows from closing instantly on click
+    input("\n[Execution Concluded] Press Enter to exit terminal workspace...")

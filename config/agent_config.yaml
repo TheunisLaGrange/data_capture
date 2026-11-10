@@ -1,0 +1,17 @@
+# =====================================================================
+# AGENT PLATFORM SECURITY CREDENTIALS & RULES
+# =====================================================================
+agent:
+  name: "data_capture_agent"
+  version: "1.0.0"
+
+llm:
+  planner_model: "gemini-2.5-flash"   
+  temperature: 0.0
+
+# =====================================================================
+# RE-ALIGNED INGESTION MANIFEST (DATA CAPTURE SPECIFIC)
+# =====================================================================
+ingestion_manifest:
+  user_profile_data: "questions_dump.txt"         # Realignment Target
+  target_criteria_data: "captured_questions.xlsx" # Realignment Target
