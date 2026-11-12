@@ -1,4 +1,4 @@
-# data_capture
+# 📄 data_capture
 
 Modular, production-grade automation system developed with strict data-isolation patterns.
 
